@@ -1,7 +1,13 @@
-FROM hshar/ubuntunew1212
+FROM centos:latest
 
-ADD Blob /var/www/html/
+RUN yum –y install httpd
 
-CMD apachectl -D FOREGROUND
+COPY Blob/index.html /var/www/html/
 
-RUN rm var/www/html/index.html
+CMD [“/usr/sbin/httpd”, “-D”, “FOREGROUND”]
+EXPOSE 80
+#ADD Blob /var/www/html/
+
+#CMD apachectl -D FOREGROUND
+
+#RUN rm var/www/html/index.html
