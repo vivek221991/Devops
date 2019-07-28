@@ -4,4 +4,4 @@ ADD Blob /var/www/html/
 
 CMD apachectl -D FOREGROUND
 
-RUN rm var/www/html/index.html 10.9.0
+RUN rm var/www/html/index.html
